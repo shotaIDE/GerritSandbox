@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  gerrit:
+    image: gerritcodereview/gerrit
+    ports:
+      - "29418:29418"
+      - "8080:8080"
+    volumes:
+      - ./volumes/etc:/var/gerrit/etc
+      - ./volumes/git:/var/gerrit/git
+      - ./volumes/db:/var/gerrit/db
+      - ./volumes/index:/var/gerrit/index
+      - ./volumes/cache:/var/gerrit/cache
+    environment:
+      - CANONICAL_WEB_URL=http://${HOST_IP}:8080
+    # entrypoint: /entrypoint.sh init
