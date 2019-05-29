@@ -21,7 +21,7 @@ cp gerrit.config volumes/etc/
 Uncomment in docker-compose.yaml the Gerrit init step entrypoint and run Gerrit with docker-compose in foreground.
 
 ```shell
-docker-compose up gerrit
+docker-compose up
 ```
 
 Wait until you see in the output the message Initialized /var/gerrit and then the container will exit.
